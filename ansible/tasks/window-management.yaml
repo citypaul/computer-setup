@@ -1,11 +1,19 @@
-# Yabai is currently not working on M1 Macs. Keep checking this PR: https://github.com/koekeishiya/yabai/issues/725
-# - name: Install yabai window manager
-#   community.general.homebrew:
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - koekeishiya/formulae/yabai
-#   tags:
-#     - install
-#     - productivity
-#     - window-manager
+- name: Tap FelixKratz formulae
+  community.general.homebrew_tap:
+    name: FelixKratz/formulae
+  tags:
+    - install
+    - gui
+    - window-management
+
+- name: Install window management (aerospace and borders)
+  community.general.homebrew:
+    name:
+      - "nikitabobko/tap/aerospace"
+      - "borders"
+    state: latest
+  ignore_errors: yes
+  tags:
+    - install
+    - gui
+    - window-management

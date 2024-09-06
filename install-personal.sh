@@ -15,7 +15,7 @@ if ! command -v ansible &>/dev/null; then
 fi
 
 # Run the Ansible playbook
-ansible-playbook local.yaml -K --tags install,personal || {
+ansible-playbook local.yaml -K --tags "install,personal" -v --force-handlers --diff || {
   echo "Failed to execute Ansible playbook"
   exit 1
 }

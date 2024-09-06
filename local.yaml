@@ -34,3 +34,4 @@
     - import_tasks: ansible/tasks/remove-unwanted-packages.yaml
     - import_tasks: ansible/tasks/dock.yaml
     - import_tasks: ansible/tasks/ai-tools.yaml
+    - import_tasks: ansible/tasks/window-management.yaml
